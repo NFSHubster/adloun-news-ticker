@@ -6,27 +6,27 @@
 <title>News Ticker</title>
 <style>
   :root{
-    --bg:#0f1724;
-    --accent:#06b6d4;
-    --text:#e6eef6;
-    --muted:#a8b3bf;
-    --height:48px;
-    --gap:36px;
-    --speed:18s;
+  --bg:#1c1c1c;      /* darker background, less harsh */
+  --accent:#3b82f6;  /* softer blue for the dot */
+  --text:#e0e0e0;    /* soft white for news text */
+  --muted:#888888;   /* muted grey for dates */
+  --height:48px;
+  --gap:36px;
+  --speed:18s;
   }
   html,body{height:100%;margin:0;background:transparent;font-family:Tahoma,Arial,sans-serif;}
   .ticker-wrap{
-    width:100%;
-    height:var(--height);
-    display:flex;
-    align-items:center;
-    background:linear-gradient(90deg, rgba(0,0,0,0.06), rgba(255,255,255,0.01));
-    border-radius:6px;
-    overflow:hidden;
-    box-sizing:border-box;
-    padding:6px 12px;
-    gap:12px;
-  }
+  width:100%;
+  height:var(--height);
+  display:flex;
+  align-items:center;
+  background:var(--bg);   /* solid dark bg for minimalism */
+  border-radius:6px;
+  overflow:hidden;
+  box-sizing:border-box;
+  padding:6px 12px;
+  gap:12px;
+}
   .ticker-label{
     flex:0 0 auto;
     display:flex;
@@ -122,4 +122,5 @@ track.addEventListener("click", e => {
 });
 </script>
 </body>
+
 </html>
