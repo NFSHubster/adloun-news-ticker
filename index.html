@@ -70,15 +70,16 @@
   }
 
   .ticker-item{
-    display:inline-block;
-    font-size:14px;
-    color:var(--text);
-    line-height:1;
-    border-radius:4px;
-    text-decoration:none;
-    max-width:60vw;
-  }
-
+  display:inline-flex;
+  align-items:center;
+  font-size:15px;
+  color:var(--text);
+  line-height:1.5;
+  border-radius:4px;
+  text-decoration:none;
+  max-width:60vw;
+  height:100%;
+}
   /* Pause animation when hovered or focused */
   .ticker-wrap:hover .ticker-track,
   .ticker-wrap:focus-within .ticker-track,
@@ -130,4 +131,5 @@ track.addEventListener("click", e => {
 </body>
 
 </html>
+
 
