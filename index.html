@@ -58,16 +58,17 @@
   }
 
   .ticker-track{
-    display:flex;
-    align-items:center;
-    gap:var(--gap);
-    white-space:nowrap;
-    position:absolute;
-    right:0; top:0;
-    will-change:transform;
-    animation:scroll var(--speed) linear infinite;
-    padding-right:12px;
-  }
+  display:flex;
+  align-items:center;
+  gap:var(--gap);
+  white-space:nowrap;
+  position:absolute;
+  right:0; top:0;
+  will-change:transform;
+  animation:scroll var(--speed) linear infinite;
+  padding-right:12px;
+  width:max-content;
+}
 
   .ticker-item{
   display:inline-flex;
@@ -102,12 +103,24 @@
 
     <div class="ticker-viewport">
       <div id="tickerTrack" class="ticker-track" aria-paused="false" tabindex="0">
-        <div class="ticker-item">مرحبا بكم بموقع "مرآتنا</div>
+        <div class="ticker-item">مراتنا… صوت الطلاب وإبداعهم!
+منصّة تجمع أفكار الطلاب، مواهبهم، وشغفهم للإبداع.
+نمنح كل طالب مساحة يعبر فيها عن نفسه، يشارك إنجازاته، ويتواصل مع مجتمع طلابي ملهم يسعى للتطوير والتغيير الإيجابي.
+في "مراتنا" نؤمن أن كل فكرة تستحق أن تُسمع، وكل موهبة تستحق أن تُرى</div>
       </div>
     </div>
   </div>
 
 <script>
+
+const track = document.getElementById("tickerTrack");
+const originalItems = Array.from(track.children);
+
+// Duplicate 2 times for smooth long loop
+for(let i=0; i<2; i++){
+  originalItems.forEach(n => track.appendChild(n.cloneNode(true)));
+}
+
 // Duplicate for smooth scrolling
 const track = document.getElementById("tickerTrack");
 const items = Array.from(track.children).map(n => n.cloneNode(true));
@@ -131,6 +144,7 @@ track.addEventListener("click", e => {
 </body>
 
 </html>
+
 
 
 
